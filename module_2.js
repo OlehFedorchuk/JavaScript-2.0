@@ -57,3 +57,105 @@ console.log("Total is:", total);
 //   }
 // }
 // console.log("Total is 'forof':", total);
+
+// Truthy і Falsy - терміни, які використовуються для тих значень, які в логічній операції приводяться до true або false, хоча спочатку не були булями.
+
+// ЦІКАВО
+// Запам'ятайте 6 хибних (falsy) значень, що приводяться до false у логічному перетворенні:
+// 0, NaN, null, undefined, порожній рядок і false.
+// Абсолютно все інше приводиться до true.
+
+//Тобто, логічне && «І» зупиняється на хибному і повертає те, на чому зупинилось, або останній операнд.
+
+console.log(1 && 5); // true && true -> 5
+console.log(5 && 1); // true && true -> 1
+console.log(0 && 2); // false && true -> 0
+console.log(2 && 0); // true && false -> 0
+console.log("" && "Mango"); // false && true -> ""
+console.log("Mango" && ""); // true && false -> ""
+console.log("Mango" && "Poly"); // true && true -> "Poly"
+console.log("Poly" && "Mango"); // true && true -> "Mango"
+
+console.log(NaN || undefined);
+console.log(undefined || NaN);
+
+console.log(NaN && undefined);
+console.log(undefined && NaN);
+
+//Example
+console.log(true && 3); //3
+console.log(false && 3); //false
+console.log(true && 4 && "kivi"); //kivi
+console.log(true && 0 && "kivi"); //0
+console.log(true || 3); //true
+console.log(true || 3 || 4); //true
+console.log(true || false || 7); //true
+console.log(null || 2 || undefined); //2
+console.log((1 && null && 2) > 0); //false
+console.log(null || (2 && 3) > 4); //false
+console.log("" && 1); //""
+
+// //Need faund correct login
+// const logins = ["sdcedc", "cfececvevc", "efwefwef3224", "4f4fwf"];
+// const loginToFind = "4f4fwf";
+// let message = "Don`t faund login!";
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   if (logins[i] === loginToFind) {
+//     message = `Login is: ${logins[i]}`;
+//   }
+// }
+// console.log(message);
+
+// // Another example for (Need faund correct login)
+// const loginsUser = ["sdcedc", "cfececvevc", "efwefwef3224", "4f4fwf"];
+// const loginToFindUser = "4f4fwf";
+
+// const messageUser = loginsUser.includes(loginToFindUser)
+//   ? `User ${loginToFindUser} is found.`
+//   : `User ${loginToFindUser} no't found.`;
+// console.log(messageUser);
+
+//Another example for (Need faund correct login) USING FUNCTION
+// const logUser = ["sdcedc", "cfececvevc", "efwefwef3224", "4f4fwf"];
+
+// const findLogin = function (allLogins, lToFind) {
+//   return allLogins.includes(lToFind)
+//     ? `User ${lToFind} is found.`
+//     : `User ${lToFind} no't found.`;
+// };
+// // tests
+// console.log(findLogin(logUser, "3234f4fwf"));
+// console.log(findLogin(logUser, "4f4fwf"));
+// console.log(findLogin(logUser, "efwefwef3224"));
+// console.log(findLogin(logUser, "234f4fwfe"));
+
+//3/32 module 2 JS
+function checkStorage(available, ordered) {
+  // Change code below this line
+
+  if (ordered === 0) {
+    return "Your order is empty!";
+  }
+  if (ordered > available) {
+    return "Your order is too large, not enough goods in stock!";
+  }
+  return "The order is accepted, our manager will contact you";
+  // Change code above this line
+}
+//Tests
+console.log(checkStorage(100, 50));
+console.log(checkStorage(100, 130));
+console.log(checkStorage(70, 0));
+console.log(checkStorage(200, 20));
+console.log(checkStorage(200, 250));
+console.log(checkStorage(150, 0));
+
+//8/32 module 2 JS
+// Індекс останнього елемента масиву fruits через довжина_масиву - 1
+// Значення останнього елемента масиву
+const fruits = ["apple", "peach", "pear", "banana"];
+// Change code below this line
+const lastElementIndex = fruits.length - 1;
+console.log(lastElementIndex);
+console.log(fruits[lastElementIndex]);
