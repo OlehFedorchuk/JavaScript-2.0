@@ -226,12 +226,154 @@ console.log("Total is:", total);
 //   return totalPrice;
 // }
 
-//Example 2 Refactoring code
-function calculateEngravingPrice(message, priceWord) {
-  return message.split(" ").length * priceWord;
+// //Example 2 Refactoring code
+// function calculateEngravingPrice(message, priceWord) {
+//   return message.split(" ").length * priceWord;
+// }
+// //test
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); // 50
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); //100
+// console.log(calculateEngravingPrice("Web-development is creative work", 40)); //160
+// console.log(calculateEngravingPrice("Web-development is creative work", 20)); //80
+
+//13/32 module 2 JS
+
+// function slugify(title) {
+//   return title.toLowerCase().split(" ").join("-");
+// }
+// //tests
+// console.log(slugify("Arrays for begginers"));
+// console.log(slugify("English for developer"));
+// console.log(slugify("Ten secrets of JavaScript"));
+
+// //14/32 module 2 JS
+// const fruits = ["apple", "plum", "pear", "orange", "banana"];
+
+// // Change code below this line
+// const firstTwoEls = fruits.slice(0, 2);
+// console.log(firstTwoEls); // масив із перших двох елементів: ["apple", "plum"]
+
+// const nonExtremeEls = fruits.slice(1, -1);
+// console.log(nonExtremeEls); //масив з усіх елементів, крім першого та останнього: ["plum", "pear", "orange"]
+
+// const lastThreeEls = fruits.slice(-3);
+// console.log(lastThreeEls); // масив із трьох останніх елементів: ["pear", "orange", "banana"]
+
+//15/32 module 2 JS
+// const oldClients = ["Mango", "Ajax", "Poly", "Kiwi"];
+// const newClients = ["Peach", "Houston"];
+
+// const allClients = oldClients.concat(newClients); // Change this line
+// console.log(allClients);
+
+//16/32 monule 2 JS
+// function makeArray(firstArray, secondArray, maxLength) {
+//   const concatArry = firstArray.concat(secondArray);
+//   if (concatArry.length > maxLength) {
+//     return concatArry.slice(0, maxLength);
+//   }
+//   return concatArry;
+// }
+
+// // 16/32 monule 2 JS Refactoring code
+// function makeArray(firstArray, secondArray, maxLength) {
+//   return firstArray.concat(secondArray).slice(0, maxLength);
+// }
+// ///tests
+// console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); //["Mango", "Poly", "Ajax"]
+// console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); //["Mango", "Poly", "Houston", "Ajax"]
+// console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); //["Mango", "Ajax", "Chelsea"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); //["Earth", "Jupiter"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); //["Earth", "Jupiter", "Neptune", "Uranus"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); //[]
+
+//17/32 module 2 JS
+// const start = 3;
+// const end = 7;
+
+// for (let i = start; i <= end; i += 1) {
+
+//   console.log(i);
+// }
+
+// //18/32 module 2 JS
+// function calculateTotal(number) {
+//   let sumaNumbrs = 0;
+//   for (let i = 0; i <= number; i += 1) {
+//     sumaNumbrs += i;
+//   }
+//   return sumaNumbrs;
+// }
+// //tests
+// console.log(calculateTotal(1)); //1
+// console.log(calculateTotal(3)); //6
+// console.log(calculateTotal(7)); //28
+// console.log(calculateTotal(18)); //171
+// console.log(calculateTotal(24)); //300
+// console.log(calculateTotal()); //Виклик функції calculateTotal() з випадковим числом повертає правильне значення
+
+// //19/32 module 2 JS
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// for (let i = 0; i < fruits.length; i += 1) {
+//   const fruit = fruits[i];
+//   console.log(fruit);
+// }
+
+// //20/32 module 2 JS
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   return total;
+// }
+// //tests
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //138
+// console.log(calculateTotalPrice([164, 48, 291])); //503
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); //1116
+// console.log(calculateTotalPrice([1000, 4]));
+
+// 21/32 module 2 JS
+/*
+function findLongestWord(string) {
+  // Change code below this line
+  const stringSplit = string.split(" ");
+  console.log("Array after metchod slpit: ", stringSplit);
+
+  let r;
+  for (let i = 0; i < stringSplit.length; i += 1) {
+    const element = stringSplit[i];
+    r = element.length; //length for one elements N1
+    // console.log("length for one elements N1:", r);
+
+    for (let j = 0; j < stringSplit.length; j += 1) {
+      const element = stringSplit[j];
+      const r2 = element.length; //length for one elements N2
+      // console.log("length for one elements N2:", r2);
+      if (r2 >= r) {
+        r = r2;
+        // console.log(r);
+      }
+    }
+    for (let i = 0; i < stringSplit.length; i += 1) {
+      const element = stringSplit[i];
+      // console.log("Arry 3:", element);
+      if (element.length === r) {
+        return element;
+      }
+    }
+
+    return r;
+    // console.log(element.length);
+  }
+
+  // Change code above this line
 }
-//test
-console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); // 50
-console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); //100
-console.log(calculateEngravingPrice("Web-development is creative work", 40)); //160
-console.log(calculateEngravingPrice("Web-development is creative work", 20)); //80
+//tests
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog")); //jumped
+console.log(findLongestWord("Google do a roll")); //Google
+console.log(findLongestWord("May the force be with you")); //force
+console.log(findLongestWord("Java Script")); //Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
+*/
