@@ -377,3 +377,36 @@ console.log(findLongestWord("Google do a roll")); //Google
 console.log(findLongestWord("May the force be with you")); //force
 console.log(findLongestWord("Java Script")); //Виклик функції findLongestWord() з випадковим рядком повертає правильне значення
 */
+//22/32 module 2 JS
+
+// function createArrayOfNumbers(min, max) {
+//   let numbers = [];
+//   for (let i = min; i <= max; i++) {
+//     numbers.push(i);
+//   }
+//   return numbers;
+// }
+// //tests
+// console.log(createArrayOfNumbers(1, 3)); // повертає [1, 2, 3]
+// console.log(createArrayOfNumbers(14, 17)); //повертає [14, 15, 16, 17]
+// console.log(createArrayOfNumbers(29, 34)); // повертає [29, 30, 31, 32, 33, 34]
+// console.log(createArrayOfNumbers()); //з випадковими min і max повертає правильний масив
+//23/32 module 2 JS
+function filterArray(numbers, value) {
+  // Change code below this line
+  let element = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > value) {
+      element.push(numbers[i]);
+    }
+  }
+  return element;
+  // Change code above this line
+}
+//tests
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // повертає [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); //[5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); //[]
+console.log(filterArray([12, 24, 8, 41, 76], 38)); //[41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); //[24, 41, 76]
+console.log(filterArray([11, 533, 53, 645645], 60));
