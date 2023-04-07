@@ -35,17 +35,17 @@ for (const i of arry) {
 // console.log(b);
 // const ae = [1, 2, 3];
 // console.table(ae);
-const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
-let total = 0;
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 11];
+// let total = 0;
 
-for (let i = 0; i < numbers.length; i += 1) {
-  //   console.log(numbers[i]);
-  if (numbers[i] % 2 === 0) {
-    // console.log(numbers[i]);
-    total += numbers[i];
-  }
-}
-console.log("Total is:", total);
+// for (let i = 0; i < numbers.length; i += 1) {
+//   //   console.log(numbers[i]);
+//   if (numbers[i] % 2 === 0) {
+//     // console.log(numbers[i]);
+//     total += numbers[i];
+//   }
+// }
+// console.log("Total is:", total);
 
 // // the same Example
 // for (const number of numbers) {
@@ -392,21 +392,187 @@ console.log(findLongestWord("Java Script")); //Виклик функції findL
 // console.log(createArrayOfNumbers(29, 34)); // повертає [29, 30, 31, 32, 33, 34]
 // console.log(createArrayOfNumbers()); //з випадковими min і max повертає правильний масив
 //23/32 module 2 JS
-function filterArray(numbers, value) {
-  // Change code below this line
-  let element = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > value) {
-      element.push(numbers[i]);
-    }
-  }
-  return element;
-  // Change code above this line
-}
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   let element = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > value) {
+//       element.push(numbers[i]);
+//     }
+//   }
+//   return element;
+//   // Change code above this line
+// }
+// //tests
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); // повертає [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); //[5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); //[]
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); //[41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); //[24, 41, 76]
+// console.log(filterArray([11, 533, 53, 645645], 60));
+//24/32 module 2 JS
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
+
+//   return fruits.includes(fruit); // Change this line
+// }
+// // const planets = ["Earth", "Mars", "Venus"];
 //tests
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // повертає [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); //[5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); //[]
-console.log(filterArray([12, 24, 8, 41, 76], 38)); //[41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); //[24, 41, 76]
-console.log(filterArray([11, 533, 53, 645645], 60));
+// // console.log(planets.includes("Earth")); // true
+// // console.log(planets.includes("Mars")); // true
+// // console.log(planets.includes("Venus")); // true
+// // console.log(planets.includes("Jupiter")); // false
+// console.log(checkFruit("plum")); //true
+// console.log(checkFruit("mandarin")); //false
+// console.log(checkFruit("pear")); //true
+// console.log(checkFruit("Pear")); //false
+// console.log(checkFruit("apple")); //true
+// console.log(checkFruit("strawbery")); //з випадковим словом повертає правильне значення boolean
+//25/32 module 2 JS
+// function getCommonElements(array1, array2) {
+//   const commonElements = [];
+//   for (const element of array1) {
+//     if (array2.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   }
+//   return commonElements;
+// }
+// // Change code above this line
+// //tests
+// console.log(getCommonElements([1, 2, 3], [2, 4])); //повертає [2]
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); //[1, 2]
+// console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); //[12, 27, 3]
+// console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); //[10, 30, 40]
+// console.log(getCommonElements([1, 2, 3], [10, 20, 30])); //[]
+// console.log(getCommonElements([3, 3, 54, 66, 5], [5]));//Виклик функції getCommonElements() з випадковими двома масивами повертає правильний масив
+//26/32 module 2 JS
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   // Change code below this line
+
+//   // for (let i = 0; i < order.length; i += 1) {
+//   //   total += order[i];
+//   // }
+//   for (const variable of order) {
+//     total += variable;
+//   }
+
+//   // Change code above this line
+//   return total;
+// }
+// //tests
+// console.log(calculateTotalPrice([12, 85, 37, 4])); //повертає 138
+// console.log(calculateTotalPrice([164, 48, 291])); //053
+// console.log(calculateTotalPrice([412, 371, 94, 63, 176])); //1116
+// console.log(calculateTotalPrice([])); //0
+// console.log(calculateTotalPrice([2, 2])); //Виклик функції calculateTotalPrice() з випадковим масивом чисел повертає правильну суму
+//27/32 module 2 JS
+// function filterArray(numbers, value) {
+//   // Change code below this line
+//   const filteredNumbers = [];
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   const number = numbers[i];
+
+//   //   if (number > value) {
+//   //     filteredNumbers.push(number);
+//   //   }
+//   // }
+
+//   //refactoring
+//   for (const variable of numbers) {
+//     if (variable > value) {
+//       filteredNumbers.push(variable);
+//     }
+//   }
+//   return filteredNumbers;
+//   // Change code above this line
+// }
+// //tests
+// console.log(filterArray([1, 2, 3, 4, 5], 3)); //[4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); //[5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); //[]
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); //[41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); //[24, 41, 76]
+// console.log(filterArray([1, 3], 2)); //Виклик функції filterArray() з випадковим масивом і числом повертає правильний масив
+//28/32 module 2 JS
+// const a = 3 % 1;
+// const b = 4 % 3;
+// const c = 11 % 8;
+// const d = 12 % 7;
+// const e = 8 % 3;
+// console.log(`${a},${b},${c},${d},${e}`); //0,1,3,5,2
+//29/32 module 2 JS
+// function getEvenNumbers(start, end) {
+//   // Change code below this line
+//   const newArray = [];
+//   for (let i = start; i <= end; i++) {
+//     //console.log(i);
+//     if (i % 2 === 0) {
+//       newArray.push(i);
+//     }
+//   }
+//   return newArray;
+//   // Change code above this line
+// }
+// //tests
+// console.log(getEvenNumbers(2, 5)); //[2, 4]
+// console.log(getEvenNumbers(3, 11)); //[4, 6, 8, 10]
+// console.log(getEvenNumbers(6, 12)); //[6, 8, 10, 12]
+// console.log(getEvenNumbers(8, 8)); //[8]
+// console.log(getEvenNumbers(7, 7)); //[]
+// console.log(getEvenNumbers(30, 50)); //Виклик функції getEvenNumbers() з випадковими start і end повертає правильний масив
+//30/32 module 2 JS
+// const start = 6;
+// const end = 27;
+// let number;
+
+// for (let i = start; i < end; i += 1) {
+//   if (i % 5 === 0) {
+//     number = i;
+//     console.log(number);
+//     break;
+//   }
+// }
+// //tests
+// //number is equals 10
+///31/32
+// function findNumber(start, end, divisor) {
+//   // Change code below this line
+//   let number;
+
+//   for (let i = start; i < end; i += 1) {
+//     if (i % divisor === 0) {
+//       number = i;
+//       return number;
+//     }
+//   }
+
+//   // Change code above this line
+// }
+// //tests
+// console.log(findNumber(2, 6, 5)); //повертає 5
+// console.log(findNumber(8, 17, 3)); //9
+// console.log(findNumber(16, 35, 7)); //21
+///32/32 module 2 JS Is code the same function includes()
+// function includes(array, value) {
+//   // Change code below this line
+//   for (let i = 0; i < array.length; i++) {
+//     const element = array[i];
+//     if (element === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// // Change code above this line
+// //tests
+// console.log(includes([1, 2, 3, 4, 5], 3)); //true
+// console.log(includes([1, 2, 3, 4, 5], 17)); //false
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
+// ); //true
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
+// ); //false
