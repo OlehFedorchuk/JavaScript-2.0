@@ -538,21 +538,21 @@ console.log(findLongestWord("Java Script")); //Виклик функції findL
 // //tests
 // //number is equals 10
 ///31/32
-// function findNumber(start, end, divisor) {
-//   // Change code below this line
-//   let number;
+//function findNumber(start, end, divisor) {
+// Change code below this line
+// let number;
 
-//   for (let i = start; i < end; i += 1) {
-//     if (i % divisor === 0) {
-//       number = i;
-//       return number;
-//     }
+// for (let i = start; i < end; i += 1) {
+//   if (i % divisor === 0) {
+//     number = i;
+//     return number;
 //   }
+// }
 
 //   // Change code above this line
-// }
+//}
 // //tests
-// console.log(findNumber(2, 6, 5)); //повертає 5
+//console.log(findNumber(2, 6, 5)); //повертає 5
 // console.log(findNumber(8, 17, 3)); //9
 // console.log(findNumber(16, 35, 7)); //21
 ///32/32 module 2 JS Is code the same function includes()
