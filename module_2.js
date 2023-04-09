@@ -576,3 +576,4 @@ console.log(findLongestWord("Java Script")); //Виклик функції findL
 // console.log(
 //   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
 // ); //false
+console.log("hello");
