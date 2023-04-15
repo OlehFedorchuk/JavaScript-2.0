@@ -426,3 +426,513 @@ console.log(getAllPropValues("price")); //повертає [1300, 2700, 400, 120
 console.log(getAllPropValues("category")); //повертає []
 */
 //20/41
+/*
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalPrice(productName) {
+  for (const product in products) {
+    const element = products[product];
+
+    if (productName === element.name) {
+      return element.price * element.quantity;
+    }
+  }
+  return 0;
+}
+//tests
+console.log(calculateTotalPrice("Blaster")); //0
+console.log(calculateTotalPrice("Radar")); //5200
+console.log(calculateTotalPrice("Droid")); //2800
+console.log(calculateTotalPrice("Grip")); //10800
+console.log(calculateTotalPrice("Scanner")); //8100
+*/
+//21/41
+/*
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+
+// const yesterday = highTemperatures.yesterday;
+// const today = highTemperatures.today;
+// const tomorrow = highTemperatures.tomorrow;
+
+//Диструктуризація об'єта
+const { yesterday, today, tomorrow } = highTemperatures;
+
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+console.log(meanTemperature);
+console.log(highTemperatures);
+*/
+//22/41
+/*
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+// const yesterday = highTemperatures.yesterday;
+// const today = highTemperatures.today;
+// const tomorrow = highTemperatures.tomorrow;
+// const icon = highTemperatures.icon;
+
+//Диструктуризація об'єта + значення по замовчуванню...
+const {
+  yesterday,
+  today,
+  tomorrow,
+  icon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+} = highTemperatures;
+// Change code above this line
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+console.log(meanTemperature);
+*/
+//23/41
+/*
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+// const highYesterday = highTemperatures.yesterday;
+// const highToday = highTemperatures.today;
+// const highTomorrow = highTemperatures.tomorrow;
+// const highIcon = highTemperatures.icon;
+const {
+  yesterday: highYesterday,
+  today: highToday,
+  tomorrow: highTomorrow,
+  icon: highIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+} = highTemperatures;
+// Change code above this line
+const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+//tests
+console.log(meanTemperature);
+*/
+//24/41
+/*
+const colors = [
+  { hex: "#f44336", rgb: "244,67,54" },
+  { hex: "#2196f3", rgb: "33,150,243" },
+  { hex: "#4caf50", rgb: "76,175,80" },
+  { hex: "#ffeb3b", rgb: "255,235,59" },
+];
+
+const hexColors = [];
+const rgbColors = [];
+// Change code below this line
+
+// Диструктуризація об'єта в циклі
+for (const { hex, rgb } of colors) {
+  hexColors.push(hex);
+  rgbColors.push(rgb);
+}
+//tests
+console.log(hexColors);
+console.log(rgbColors);
+*/
+//25/41
+/*
+const forecast = {
+  today: {
+    low: 28,
+    high: 32,
+    icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+  },
+  tomorrow: {
+    low: 27,
+    high: 31,
+  },
+};
+// Change code below this line
+
+// const highToday = forecast.today.high;
+// const lowToday = forecast.today.low;
+// const todayIcon = forecast.today.icon;
+
+// const highTomorrow = forecast.tomorrow.high;
+// const lowTomorrow = forecast.tomorrow.low;
+// const tomorrowIcon = forecast.tomorrow.icon;
+//Глибока диструктуризація об'єта + зміна значення по замовчуванню...
+const {
+  today: {
+    low: lowToday,
+    high: highToday,
+    icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+  },
+  tomorrow: {
+    low: lowTomorrow,
+    high: highTomorrow,
+    icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+  },
+} = forecast;
+console.table(forecast);
+*/
+//26/41
+/*
+function calculateMeanTemperature(forecast) {
+  // const todayLow = forecast.today.low;
+  // const todayHigh = forecast.today.high;
+  // const tomorrowLow = forecast.tomorrow.low;
+  // const tomorrowHigh = forecast.tomorrow.high;
+
+  // Деструктуризація в тілі функції
+  const {
+    today: { low: todayLow, high: todayHigh },
+    tomorrow: { low: tomorrowLow, high: tomorrowHigh },
+  } = forecast;
+
+  return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+}
+//tests
+console.log(
+  calculateMeanTemperature({
+    today: { low: 28, high: 32 },
+    tomorrow: { low: 25, high: 29 },
+  })
+);
+*/
+//27/41
+/*
+const temps = [14, -4, 25, 8, 11];
+
+// В консолі буде масив
+console.log(temps);
+// ❌ Так не спрацює, тому що передаємо цілий масив
+console.log(Math.max(temps)); // NaN
+
+// В консолі буде набір окремих чисел
+console.log(...temps);
+// ✅ Розподілимо колекцію елементів у якості окремих аргументів
+console.log(Math.max(...temps)); // 25
+*/
+/*
+const scores = [89, 64, 42, 17, 93, 51, 26];
+// Change code below this line
+const bestScore = Math.max(...scores);
+const worstScore = Math.min(...scores);
+console.log(bestScore);
+console.log(worstScore);
+*/
+//28/41
+/*
+const firstGroupScores = [64, 42, 93];
+const secondGroupScores = [89, 14, 51, 26];
+const thirdGroupScores = [29, 47, 18, 97, 81];
+// Change code below this line
+const allScores = [
+  ...firstGroupScores,
+  ...secondGroupScores,
+  ...thirdGroupScores,
+];
+const bestScore = Math.max(...allScores);
+const worstScore = Math.min(...allScores);
+
+//tests
+console.log(firstGroupScores);
+console.log(secondGroupScores);
+console.log(thirdGroupScores);
+console.log(allScores);
+console.log(bestScore);
+console.log(worstScore);
+*/
+//29/41
+/*
+const defaultSettings = {
+  theme: "light",
+  public: true,
+  withPassword: false,
+  minNumberOfQuestions: 10,
+  timePerQuestion: 60,
+};
+const overrideSettings = {
+  public: false,
+  withPassword: true,
+  timePerQuestion: 30,
+};
+// Change code below this line
+const finalSettings = { ...defaultSettings, ...overrideSettings };
+console.log(finalSettings);//{theme: 'light', public: false, withPassword: true, minNumberOfQuestions: 10, timePerQuestion: 30}
+
+//tests
+console.log(finalSettings.theme); //light
+console.log(finalSettings.public); //false
+console.log(finalSettings.withPassword); //true
+console.log(finalSettings.minNumberOfQuestions); //10
+console.log(finalSettings.timePerQuestion); //30
+*/
+//30/41
+/*
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+  let res = {
+    completed, // variant 1. Но только если не подразумевается, что в аргументе функции пользователь не может задавать completed, иначе значение по умолчанию перезапишет пользовательское.
+    category,
+    priority,
+    ...data,
+  };
+  return res; // variant 2. return { ...{ completed, category, priority }, ...data };
+  // Change code above this line
+}
+//tests
+console.log(
+  makeTask({ category: "General", priority: "Normal", completed: false })
+);
+console.log(
+  makeTask({
+    category: "Homemade",
+    priority: "Low",
+    text: "Take out the trash",
+  })
+);
+console.log(
+  makeTask({
+    category: "Finance",
+    text: "Take interest",
+  })
+);
+console.log(
+  makeTask({
+    priority: "Low",
+    text: "Choose shampoo",
+  })
+);
+console.log(makeTask({ text: "Buy bread" }));
+*/
+//31/41
+// Change code below this line
+/*
+//Example 1 for
+function add(...rest) {
+  const total = [...rest];
+  let element = 0;
+  for (let i = 0; i < total.length; i += 1) {
+    element += total[i];
+  }
+  return element;
+  // Change code above this line
+}
+*/
+//Example 2 for of
+/*
+function add(...args) {
+  let total = 0;
+  for (const i of args) {
+    total += i;
+  }
+  return total;
+}
+//tests
+console.log(add(15, 27));
+console.log(add(12, 4, 11, 48));
+console.log(add(32, 6, 13, 19, 8));
+console.log(add(74, 11, 62, 46, 12, 36));
+*/
+//32/41
+/*
+// Change code below this line
+function addOverNum(firstParameter, ...args) {
+  let total = 0;
+  for (const arg of args) {
+    if (arg > firstParameter) {
+      total += arg;
+    }
+  }
+  return total;
+  // Change code above this line
+}
+//tests
+console.log(addOverNum(50, 15, 27)); //0
+console.log(addOverNum(10, 12, 4, 11, 48, 10, 8)); //71
+console.log(addOverNum(15, 32, 6, 13, 19, 8)); //51
+console.log(addOverNum(20, 74, 11, 62, 46, 12, 36)); //218
+*/
+//33/41
+/*
+function findMatches(firstElement, ...args) {
+  const matches = [];
+  for (const arg of args) {
+    if (firstElement.includes(arg)) {
+      matches.push(arg);
+    }
+  }
+  return matches;
+}
+//tests
+console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)); //[1, 2]
+console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)); // [17, 89, 2]
+console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41)); // [24, 9, 41]
+console.log(findMatches([63, 11, 8, 29], 4, 7, 16)); // []
+*/
+//34/41
+/*
+const bookShelf = {
+  // Change code below this line
+  books: ["The last kingdom", "The guardian of dreams"],
+  getBooks() {
+    return "Returning all books";
+  },
+  addBook(bookName) {
+    return `Adding book ${bookName}`;
+  },
+  updateBook(oldName, newName) {
+    return `Updating book ${oldName} to ${newName}`;
+  },
+  removeBook(bookName) {
+    return `Deleting book ${bookName}`;
+  },
+
+  // Change code above this line
+};
+//tests
+console.log(bookShelf.getBooks());
+console.log(bookShelf.addBook("Haze"));
+console.log(bookShelf.removeBook("Red sunset"));
+console.log(bookShelf.updateBook("Sands of dune", "Dune"));
+*/
+//35/41
+/*
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+    const bookIndex = this.books.indexOf(oldName);
+    console.log(bookIndex);
+    this.books.splice(bookIndex, 1, newName);
+    console.log(this.books);
+
+    // Change code above this line
+  },
+};
+//tests
+console.log(bookShelf.updateBook("Haze", "Dungeon chronicles"));
+console.log(bookShelf.updateBook("The last kingdom", "Dune"));
+console.log();
+console.log();
+*/
+//36/41
+/*
+const atTheOldToad = {
+  // Change code below this line
+  potions: [],
+  // Change code above this line
+};
+console.log(atTheOldToad.potions);
+*/
+//37/41
+/*
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  // Change code above this line
+};
+//tests
+console.log(atTheOldToad);
+console.log();
+console.log();
+*/
+//38/41
+/*
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  addPotion(potionName) {
+    // Change code below this line
+    this.potions.push(potionName);
+    return this.potions;
+    // Change code above this line
+  },
+};
+//tests
+console.log(atTheOldToad.addPotion("Invisibility"));//["Speed potion", "Dragon breath", "Stone skin", "Invisibility"]
+console.log(atTheOldToad.addPotion("Power potion"));//["Speed potion", "Dragon breath", "Stone skin", "Invisibility", "Power potion"]
+*/
+//39/41
+/*
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    // Change code below this line
+    const indexElement = this.potions.indexOf(potionName);
+    this.potions.splice(indexElement, 1);
+    return this.potions;
+    // Change code above this line
+  },
+};
+//tests
+console.log(atTheOldToad.removePotion("Dragon breath"));
+console.log(atTheOldToad.removePotion("Speed potion"));
+*/
+//40/41
+/*
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  updatePotionName(oldName, newName) {
+    // Change code below this line
+    const indexElement = this.potions.indexOf(oldName);
+    this.potions.splice(indexElement, 1, newName);
+    return this.potions;
+    // Change code above this line
+  },
+};
+//tests
+console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); //["Speed potion", "Polymorth", "Stone skin"]
+console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //["Speed potion", "Polymorth", "Invisibility"]
+console.log();
+*/
+//41/41
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(newPotion) {
+    if (this.potions.includes(newPotion)) {
+      return `Error! Potion ${newPotion} is already in your inventory!`;
+    }
+
+    this.potions.push(newPotion);
+  },
+  removePotion(potionName) {
+    const potionIndex = this.potions.indexOf(potionName);
+
+    if (potionIndex === -1) {
+      return `Potion ${potionName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1);
+  },
+  updatePotionName(oldName, newName) {
+    const potionIndex = this.potions.indexOf(oldName);
+
+    if (potionIndex === -1) {
+      return `Potion ${oldName} is not in inventory!`;
+    }
+
+    this.potions.splice(potionIndex, 1, newName);
+  },
+  // Change code above this line
+};
+//tests
+console.log();
+console.log();
