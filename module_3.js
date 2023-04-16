@@ -894,7 +894,8 @@ console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); //["Sp
 console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //["Speed potion", "Polymorth", "Invisibility"]
 console.log();
 */
-// //41/41
+//41/41
+/*
 const atTheOldToad = {
   potions: [
     { name: "Speed potion", price: 460 },
@@ -939,13 +940,14 @@ const atTheOldToad = {
 
 //tests
 // console.log(atTheOldToad.getPotions());
-// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 780 }));
-// console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
-// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
-// console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }));
+console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 780 }));
+console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
+console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }));
 console.log(atTheOldToad.removePotion("Dragon breath"));
-// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
-
+console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
+*/
+/*
 // console.log("-------------------");
 // const array = [
 //   { name: "John", age: 30 },
@@ -978,5 +980,6 @@ console.log(atTheOldToad.removePotion("Dragon breath"));
 // ) {
 //   console.log("Масив містить об'єкт");
 // } else {
-//   console.log("Масив не містить об'єкт");
-// }
+//   console.log("Масив не містить об'єкт");}
+
+*/
