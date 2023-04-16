@@ -29,7 +29,6 @@
 //   price: 2153,
 //   tags: ["premium", "promoted", "top"],
 // };
-
 // // Change code below this line
 // const aptRating = apartment.rating;
 // const aptDescr = apartment.descr;
@@ -864,7 +863,7 @@ console.log(atTheOldToad.addPotion("Power potion"));//["Speed potion", "Dragon b
 */
 //39/41
 /*
-const atTheOldToad = {
+const atTheOldToad1 = {
   potions: ["Speed potion", "Dragon breath", "Stone skin"],
   removePotion(potionName) {
     // Change code below this line
@@ -875,8 +874,8 @@ const atTheOldToad = {
   },
 };
 //tests
-console.log(atTheOldToad.removePotion("Dragon breath"));
-console.log(atTheOldToad.removePotion("Speed potion"));
+console.log(atTheOldToad1.removePotion("Dragon breath"));
+console.log(atTheOldToad1.removePotion("Speed potion"));
 */
 //40/41
 /*
@@ -895,7 +894,7 @@ console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth")); //["Sp
 console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility")); //["Speed potion", "Polymorth", "Invisibility"]
 console.log();
 */
-//41/41
+// //41/41
 const atTheOldToad = {
   potions: [
     { name: "Speed potion", price: 460 },
@@ -907,32 +906,77 @@ const atTheOldToad = {
     return this.potions;
   },
   addPotion(newPotion) {
-    if (this.potions.includes(newPotion)) {
-      return `Error! Potion ${newPotion} is already in your inventory!`;
+    if (
+      this.potions.some(
+        (item) => item.name === newPotion.name && item.age === newPotion.age
+      )
+    ) {
+      return `Error! Potion ${newPotion.name} is already in your inventory!`;
     }
 
     this.potions.push(newPotion);
   },
   removePotion(potionName) {
-    const potionIndex = this.potions.indexOf(potionName);
-
-    if (potionIndex === -1) {
+    this.potions = this.potions.filter((potion) => potion.name !== potionName);
+    if (this.getPotions().some((potion) => potion.name === potionName)) {
+      return `Potion ${potionName} is removed from inventory!`;
+    } else {
       return `Potion ${potionName} is not in inventory!`;
     }
-
-    this.potions.splice(potionIndex, 1);
   },
-  updatePotionName(oldName, newName) {
-    const potionIndex = this.potions.indexOf(oldName);
-
+  updatePotionName(oldName, newName = "") {
+    const potionIndex = this.potions.findIndex(
+      (potion) => potion.name === oldName
+    );
     if (potionIndex === -1) {
       return `Potion ${oldName} is not in inventory!`;
     }
-
-    this.potions.splice(potionIndex, 1, newName);
+    this.potions[potionIndex].name = newName;
+    return `Potion ${oldName} is renamed to ${newName}!`;
   },
   // Change code above this line
 };
+
 //tests
-console.log();
-console.log();
+// console.log(atTheOldToad.getPotions());
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 780 }));
+// console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+// console.log(atTheOldToad.addPotion({ name: "Dragon breath", price: 700 }));
+// console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }));
+console.log(atTheOldToad.removePotion("Dragon breath"));
+// console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"));
+
+// console.log("-------------------");
+// const array = [
+//   { name: "John", age: 30 },
+//   { name: "Jane", age: 25 },
+//   { name: "Bob", age: 40 },
+// ];
+// const obj = { name: "Jane", age: 25 };
+// const v = Object.values(obj);
+
+// // console.log(v);
+// for (const ar of array) {
+//   const b = Object.values(ar);
+//   // console.log(b);
+//   if ((b[0] === v[0]) & (b[1] === v[1])) {
+//     console.log("Масив містить об'єкт", v);
+//   } else {
+//     console.log("Масив не містить об'єкт");
+//   }
+// }
+
+// const array = [
+//   { name: "John", age: 30 },
+//   { name: "Jane", age: 25 },
+//   { name: "Bob", age: 40 },
+// ];
+// const object = { name: "Jane", age: 25 };
+
+// if (
+//   array.some((item) => item.name === object.name && item.age === object.age)
+// ) {
+//   console.log("Масив містить об'єкт");
+// } else {
+//   console.log("Масив не містить об'єкт");
+// }
